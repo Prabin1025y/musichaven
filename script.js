@@ -272,7 +272,7 @@ async function main() {
 
 
 async function GetAlbums() {
-    let response = await fetch(`songs/`);
+    let response = await fetch(`https://github.com/Prabin1025y/musichaven/tree/main/songs/`);
     response = await response.text();
     let newDiv = document.createElement("div");
     newDiv.innerHTML = response;
