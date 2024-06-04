@@ -19,12 +19,12 @@ let isInteractingWithSeekBar = false;
 let currentAudioObject = new Audio();
 let currentSongID;
 let songArray = [], albumArray = [];
-let pauseIconSrc = "http://127.0.0.1:3000/1/SVG/pause.svg";
-let playIconSrc = "http://127.0.0.1:3000/1/SVG/play-triangle.svg";
-let volumeIconSrc = "http://127.0.0.1:3000/1/SVG/volume.svg";
-let muteIconSrc = "http://127.0.0.1:3000/1/SVG/muted.svg";
-let repeatIconSrc = "http://127.0.0.1:3000/1/SVG/repeat.svg";
-let noRepeatIconSrc = "http://127.0.0.1:3000/1/SVG/no-repeat.svg";
+let pauseIconSrc = "SVG/pause.svg";
+let playIconSrc = "SVG/play-triangle.svg";
+let volumeIconSrc = "SVG/volume.svg";
+let muteIconSrc = "SVG/muted.svg";
+let repeatIconSrc = "SVG/repeat.svg";
+let noRepeatIconSrc = "SVG/no-repeat.svg";
 
 
 // console.log(songCardLeft);
@@ -272,7 +272,7 @@ async function main() {
 
 
 async function GetAlbums() {
-    let response = await fetch(`http://127.0.0.1:3000/1/songs/`);
+    let response = await fetch(`songs/`);
     response = await response.text();
     let newDiv = document.createElement("div");
     newDiv.innerHTML = response;
@@ -284,7 +284,7 @@ async function GetAlbums() {
 }
 
 async function GetSongs(folder) {
-    let response = await fetch(`http://127.0.0.1:3000/1/songs/${folder}`);
+    let response = await fetch(`songs/${folder}`);
     response = await response.text();
     let newDiv = document.createElement("div");
     newDiv.innerHTML = response;
@@ -339,7 +339,7 @@ function playSong(songURL) {
     //     if (!isInteractingWithSeekBar)
     //         seekBar.value = (currentAudioObject.currentTime / currentAudioObject.duration) * seekBar.max;
     // }, 10);
-    // http://127.0.0.1:3000/1/songs/English%20Favourite/A%20Thousand%20Years%20-%20Christina%20Perri%20[%20Lyrics%20+%20Vietsub%20]%20-%20Copy.m4a
+    // songs/English%20Favourite/A%20Thousand%20Years%20-%20Christina%20Perri%20[%20Lyrics%20+%20Vietsub%20]%20-%20Copy.m4a
     // console.log(songArray[currentSongID].href.split(songArray[currentSongID].innerText.replaceAll(" ", "%20"))[0]);
     // console.log(currentSongID);
     songCardLeft[currentSongID].style.backgroundColor = "#5c5c5c";
