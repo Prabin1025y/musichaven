@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility.css">
+    <link rel="stylesheet" href="pseudo.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-container ">
+            <div class="left-top-container bg-gray f-roboto">
+                <div class="logo element pointer"><img src="SVG/logo.svg" alt="logo"><img src="SVG/close.svg" alt="close" id="closeMenu"></div>
+                <div class="home element flex a-center pointer"><img src="SVG/home.svg" alt="home">Home</div>
+                <div class="search element flex a-center pointer"><img src="SVG/search.svg" alt="search">Search</div>
+            </div>
+            <div class="left-bottom-container bg-gray">
+                <div class="library flex a-center element f-roboto">
+                    <img src="SVG/library.svg" alt="library"> Your Library
+                </div>
+                <div class="songs"></div>
+                <div class="left-footer">
+                    <div class="footer-links f-roboto">
+                        <span>Legal</span><span>Safety and Privacy Center</span><span>Privacy
+                            Policy</span><span>Cookies</span><span>About ads</span><span>accessibility</span>
+                            <button id="languageBtn" class="flex a-center pointer"><img src="SVG/globe.svg"
+                                    alt="globe">Language</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-container bg-gray ">
+            <div class="header">
+                <div class="nav flex a-center">
+                    <img src="SVG/menu.svg" alt="menu" id="menuBtn" class="pointer">
+                    <img src="SVG/arrow.svg" alt="left" class="arrow-btn">
+                    <img src="SVG/arrow.svg" alt="right" class="arrow-btn">
+                </div>
+                <div class="login-section ">
+                    <button class="f-roboto" id="signup">Sign up</button>
+                    <button class="f-roboto" id="login">Log in</button>
+                </div>
+            </div>
+            <div class="playlist">
+                <div class="album-container f-roboto">
+                    <!-- <div class="albumcard flex a-center j-center">
+                        <div class="album-image flex a-center j-center">
+                            <img src="" alt="">
+                        </div>
+                        <h3>Title</h3>
+                        <p>author</p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="music-player f-roboto">
+        <div class="info">
+            <div class="info-image" id="albumPhotoPlayer"></div>
+            <div class="name">
+                <h3 id="currentSongName">------</h3>
+                <p id="currentSongAurthor">----</p>
+            </div>
+        </div>
+        <div class="slidebar f-roboto">
+            <span>--:--</span>
+            <span>--:--</span>
+            <input type="range" value="0" min="0" max="1000" id="seekBar">
+        </div>
+        <div class="controls-1">
+            <img id="previousBtn" src="SVG/prev.svg" alt="previous icon">
+            <img id="playBtn" src="SVG/play-triangle.svg" alt="play icon">
+            <img id="nextBtn" src="SVG/prev.svg" alt="next icon">
+        </div>
+        <div class="controls-2">
+            <!-- <div class="visibility-hidden"> -->
+            <div class="volume-div">
+                <input type="range" min="0" max="1" value="0.5" step="any"  id="volumeBar">
+            </div>
+            <img src="SVG/volume.svg" alt="" id="volumeBtn">
+            <img src="SVG/repeat.svg" alt="" id="repeatBtn">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

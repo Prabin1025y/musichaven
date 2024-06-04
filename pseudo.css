@@ -1,0 +1,23 @@
+.left-top-container .element:hover:not(.logo) {
+  background-color: #242424;
+  opacity: 1;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: #4a4a4a;
+  border-radius: 10px;
+
+}
+
+#seekBar::-webkit-slider-thumb {
+  /* opacity: 0; */
+  -webkit-appearance: none;
+  height: 5px;
+  width: 10px;
+
+}
