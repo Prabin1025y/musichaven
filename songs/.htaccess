@@ -1,2 +1,6 @@
 Options +Indexes
+<<<<<<< HEAD
 IndexOptions FancyIndexing NameWidth=* DescriptionWidth=*
+=======
+IndexOptions FancyIndexing NameWidth=* DescriptionWidth=*
+>>>>>>> 398767f28cf9b8f25f1f0dd4bc3e7ea48f6d2c46
