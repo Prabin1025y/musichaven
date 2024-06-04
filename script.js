@@ -41,6 +41,7 @@ async function main() {
             songArray = await GetSongs(newAlbumCard.querySelector("h3").innerText + "/");
             let songId = 0;
 
+
             // console.log(getComputedStyle(document.querySelector(".left-container")).getPropertyValue('position'));
             if (getComputedStyle(document.querySelector(".left-container")).getPropertyValue('position') === "absolute")
                 document.querySelector(".left-container").style.left = 0;
@@ -60,11 +61,32 @@ async function main() {
 
             songCardLeft.forEach(e => {
                 e.addEventListener("click", () => {
-                    currentSongID = e.id;
-                    playSong(songArray[currentSongID].href);
+                    songCardLeft.forEach(song => {
+                        song.style.backgroundColor = "black";
+                        song.querySelector(".play").style.display = "block";
+
+                    });
+
+
+                    if (songArray[e.id].href !== currentAudioObject.currentSrc) {
+                        currentSongID = e.id;
+                        playSong(songArray[currentSongID].href);
+                    }
+
+                    if (songArray[currentSongID].href === currentAudioObject.currentSrc) {
+                        songCardLeft[currentSongID].style.backgroundColor = "#5c5c5c";
+                        songCardLeft[currentSongID].querySelector(".play").style.display = "none";
+                        console.log(songCardLeft[currentSongID].querySelector(".play"));
+                    }
+                    
                 });
             });
-
+            // console.log(songArray[currentSongID].href === currentAudioObject.currentSrc);
+            if (songArray[currentSongID].href === currentAudioObject.currentSrc) {
+                songCardLeft[currentSongID].style.backgroundColor = "#5c5c5c";
+                songCardLeft[currentSongID].querySelector(".play").style.display = "none";
+                console.log(songCardLeft[currentSongID].querySelector(".play"));
+            }
         });
     }
 
@@ -317,8 +339,12 @@ function playSong(songURL) {
     //     if (!isInteractingWithSeekBar)
     //         seekBar.value = (currentAudioObject.currentTime / currentAudioObject.duration) * seekBar.max;
     // }, 10);
-    console.log(songArray[currentSongID].href.split(songArray[currentSongID].innerText.replaceAll(" ", "%20"))[0]);
     // http://127.0.0.1:3000/1/songs/English%20Favourite/A%20Thousand%20Years%20-%20Christina%20Perri%20[%20Lyrics%20+%20Vietsub%20]%20-%20Copy.m4a
+    // console.log(songArray[currentSongID].href.split(songArray[currentSongID].innerText.replaceAll(" ", "%20"))[0]);
+    // console.log(currentSongID);
+    songCardLeft[currentSongID].style.backgroundColor = "#5c5c5c";
+    songCardLeft[currentSongID].querySelector(".play").style.display = "none";
+    
     albumPhotoPlayer.style.backgroundImage = `url("${songArray[currentSongID].href.split(songArray[currentSongID].innerText.replaceAll(" ", "%20"))[0] + "album walpaper.jpeg"}")`;
     albumPhotoPlayer.classList.add("rotateAnim");
     document.getElementById("playBtn").src = pauseIconSrc;
